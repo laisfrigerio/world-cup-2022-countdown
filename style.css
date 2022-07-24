@@ -1,0 +1,80 @@
+:root {
+    --background: #2E2D2D;
+    --gray-800: #424242;
+    --green-500: #62ABA1;
+}
+
+* {
+  border: 0;
+  box-sizing: content-box;
+  font-family: 'Antonio', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    align-items: center;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+#count-down {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+#count-down li {
+    background-color: var(--gray-800);
+    border-radius: 15px;
+    color: var(--green-500);
+    font-size: 32px;
+    font-weight: bold;
+    height: 45px;
+    padding: 8px 12px;
+    position: relative;
+    text-align: center;
+    width: 35px;
+}
+
+#count-down li:before,
+#count-down li:after {
+    position: absolute;
+}
+
+#count-down li:not(:last-child):before {
+    content: ":";
+    font-size: 24px;
+    right: -15px;
+    top: 15px;
+}
+
+#count-down li:after {
+    bottom: -16px;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    justify-content: center;
+    width: calc(100% - 22px);
+}
+
+#count-down li.days:after {
+    content: "dias";
+}
+
+#count-down li.hours:after {
+    content: "horas";
+}
+
+#count-down li.minutes:after {
+    content: "minutos";
+}
+
+#count-down li.seconds:after {
+    content: "segundos";
+}
